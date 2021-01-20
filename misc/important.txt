@@ -1,0 +1,27 @@
+	N E W   W E B S I T E S:
+
+In /misc/sites.txt there is a list of all the subfolders that are considered to be a site.
+
+
+	N E W   B A N N E R   S I Z E S:
+
+In order to support new banner sizes, in /misc/bna.js there is a line that looks something like:
+`const supported_sizes = ["_512x128", "_128x512"];`
+The new size has to be added there.
+And in /misc/create_banners_json.py there is a line that looks something like `supported_sizes = ["_512x128", "_128x512"]`.
+The new size should be added there as well.
+You should be able to find those locations with a search for @Banner_Support_Sizes. 
+
+
+	T O D O:
+
+- mp4 for animated banners instead of gifs
+- button size banners 128x64 / 182x96
+- icons?
+- 
+
+
+	S I T E S:
+- heat camera
+- pen plotter
+- 

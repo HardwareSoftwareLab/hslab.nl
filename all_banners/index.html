@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>All Banners</title>
+	<script type="text/javascript" src="../misc/bna.js"></script>
+
+	<script type="text/javascript">
+
+
+const remove_double_banners = function() {
+	// @Banner_Support_Sizes
+	const supported_sizes = ["_512x128", "_128x512"];
+
+	for (let i = 0; i < supported_sizes.length; i++) {
+
+		const size = supported_sizes[i];
+		const banner_containers = document.getElementsByClassName("banners"+size);
+		let remove_starting_at_index = -1;
+		
+		for (let j = 1; j < banner_containers.length; j++) {
+			if (banner_containers[j].innerHTML == banner_containers[0].innerHTML) {
+				remove_starting_at_index = j;
+				break;
+			}
+		}
+		if (remove_starting_at_index != -1) {
+			for (let j = banner_containers.length-1; j >= remove_starting_at_index; j--) {
+				banner_containers[j].remove();
+			}	
+		}
+		
+	}
+}
+
+
+window.addEventListener("DOMContentLoaded", function() {
+
+	const callback = function(mutationsList, observer) {
+		observer.disconnect();
+		remove_double_banners();
+	}
+
+	const obs = new MutationObserver(callback);
+	const config = { attributes: true, childList: true, subtree: true };
+	obs.observe(document.body, config);
+});
+
+
+</script>
+
+<style type="text/css">
+
+.banner {
+	float: left;
+}
+
+</style>
+
+</head>
+<body>
+
+	<h1>All Banners</h1>	
+
+	
+<!-- random now -->
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_512x128"></div>
+	<div class="banners_128x512"></div>
+
+</body>
+
+
+
+</html>
+
+
+

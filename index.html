@@ -1,0 +1,284 @@
+<meta charset="UTF-8">
+<script type="text/javascript" src="misc/bna.js"></script>
+<style type="text/css">
+
+body {
+  font-family: 'Courier New', monospace;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+th {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+#logo {
+  font-family: Monospace;
+  white-space: pre;
+}
+.logo_top {
+  color: red;
+  font-weight: bold;
+}
+
+a {
+  color: rgb(100, 0, 0);
+}
+
+h2 a {
+  color: red;
+  font-weight: normal;
+}
+
+#table_open_times th {
+  padding-left: 50px;
+}
+#table_open_times td {
+  padding-left: 50px;
+}
+
+
+</style>
+
+
+<table>
+
+<tr>
+
+
+<div id="logo">
+ ___/<span class="logo_top">\\\</span>__/<span class="logo_top">\\\</span>___/<span class="logo_top">\\\\\\\\\</span>__/<span class="logo_top">\\\</span>_______________________/<span class="logo_top">\\\</span>________        
+|\__\ <span class="logo_top">\\\</span>_\ <span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>____/__\ <span class="logo_top">\\\</span>______________________\ <span class="logo_top">\\\</span>________\       
+||\__\ <span class="logo_top">\\\</span>_\ <span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>_______\ <span class="logo_top">\\\</span>______________________\ <span class="logo_top">\\\</span>________\      
+|||\__\ <span class="logo_top">\\\\\\\\\</span>__\ <span class="logo_top">\\\\\\\\</span>__\ <span class="logo_top">\\\</span>________/<span class="logo_top">\\\\\\\\\</span>____\ <span class="logo_top">\\\</span>________\     
+||||\__\ <span class="logo_top">\\\</span>__/<span class="logo_top">\\\</span>__\/____/<span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>_______\/______/<span class="logo_top">\\\</span>___\ <span class="logo_top">\\\\\\\\\</span>__\    
+|||||\__\ <span class="logo_top">\\\</span>_\ <span class="logo_top">\\\</span>_______\ <span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>_________/<span class="logo_top">\\\\\\\\\\</span>__\ <span class="logo_top">\\\</span>___/<span class="logo_top">\\\</span>_\   
+||||||\__\ <span class="logo_top">\\\</span>_\ <span class="logo_top">\\\</span>_______\ <span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>________/<span class="logo_top">\\\</span>____/<span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>__\ <span class="logo_top">\\\</span>_\  
+|||||||\__\ <span class="logo_top">\\\</span>_\ <span class="logo_top">\\\</span>__/<span class="logo_top">\\\\\\\\\</span>__\ <span class="logo_top">\\\\\\\\\</span>_\//<span class="logo_top">\\\\\\\\</span>/<span class="logo_top">\\</span>_\ <span class="logo_top">\\\\\\\\\</span>__\ 
+||||||||\__\/_/__\/_/__\/_______/___\/_______/___\/______/\//__\/_______/___\
+</div>
+<script type="text/javascript">
+
+    let tops = document.getElementById("logo").getElementsByClassName("logo_top");
+
+    let sequence = '\\|/-';
+    let sequence_index = 0;
+
+
+    (function(){
+
+        for (let i = 0; i < tops.length; i++) {
+            tops[i].innerHTML = tops[i].innerHTML.replaceAll(sequence[sequence_index], sequence.charAt((sequence_index+1)%sequence.length));
+        }
+        sequence_index++;
+        sequence_index%=sequence.length;
+
+
+        setTimeout(arguments.callee, 32);
+    })();
+
+
+</script>
+
+</tr>
+
+<tr>
+
+<td style="vertical-align: top;" id="logo">|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+|||||||||
+ ||||||||
+  |||||||
+   ||||||
+    |||||
+     ||||
+      |||
+       ||
+        |
+</td>
+
+<td style="vertical-align: top;" width="544px">
+
+  (advertisement)
+  <div class="banners_512x128"></div>
+
+  <h2><a href="#Opening Times">Opening Times (Goal*...🤦)</a></h2>
+
+  <table id="table_open_times">
+    <tr>
+      <th>Day</th>
+      <th>Open</th>
+      <th>Closed</th>
+    </tr>
+    <tr>
+      <td>Mo</td>
+      <td>8:00</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>Tu</td>
+      <td>8:00</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>We</td>
+      <td>8:00</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>Th</td>
+      <td>8:00</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>Fr</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </table>
+
+  <p>
+  Due to corona you have to make an appointment at 'mail<u>(at)</u>hslab<u>(dot)</u>nl'.
+  <br><br>
+  * It's a bit harder when everyone is home...
+  </p>
+
+
+  <h2><a href="#Contact">Contact</a></h2>
+  ✉️ mail<u>(at)</u>hslab<u>(dot)</u>nl<br>
+  ☎️ <a href="tel:+0263535764">026 35 35 764</a><br>
+  🏢 R3.0.4
+
+
+  <h2><a href="#Links">Links</a></h2>
+  <table>
+    <tr>
+      <td><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20px"></td>
+      <td><a href="https://github.com/HardwareSoftwareLab">github</a></td>
+    </tr>
+    <tr>
+      <td>🧰</td>
+      <td><a href="https://github.com/HardwareSoftwareLab/Inventory">inventory</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="banner_network_association">Banner Network Association</a></td>
+    </tr>
+  </table>
+
+
+  <h2><a href="#Events">Events</a></h2>
+  <table>
+    <tr>
+      <td>🌐</td>
+      <td><a href="byos">Bring Your Own Site</a></td>
+    </tr>
+  </table>
+  <br>
+
+  <h2><a href="#Workshops">Workshops</a></h2>
+  <table>
+    <tr>
+      <td>📸</td>
+      <td><a href="workshop_camera_shutter">Camera Shutter</a></td>
+    </tr>
+    <tr>
+      <td>⚠️</td>
+      <td>more to be announced</td>
+    </tr>
+  </table>
+  <br>
+
+  <hr>
+  (advertisement)
+  <div class="banners_512x128"></div>
+
+
+  </td>
+
+  <td>
+    (ad)
+    <div class="banners_128x512"></div>
+    <img src="../template/banner_128x64.png">
+
+  </td>
+
+</tr>
+</table>
