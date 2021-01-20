@@ -4,9 +4,19 @@
 
 const main = function() {
 	// @Banner_Support_Sizes
-	const supported_sizes = ["_512x128", "_128x512"];
+	const supported_sizes = ["_512x128", "_128x512", "_128x64"];
 
-	const origin = document.location.origin; // hslab.nl | localhost:8888
+	// const origin = document.location.origin; // http://hslab.nl | http://localhost:8888 | http://localhost:8888 
+	// console.log(origin);
+	const origin = (function() {
+		
+		if (document.location.href.includes('hslab.nl')) {
+			return document.location.href.substring(0, document.location.href.indexOf('hslab.nl')+8);	
+		}
+		else {
+			return document.location.origin;
+		}
+	})();
 
 	fetch(origin+"/misc/banners.json")
 	  .then(response => response.json())

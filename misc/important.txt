@@ -15,8 +15,8 @@ You should be able to find those locations with a search for @Banner_Support_Siz
 
 	T O D O:
 
-- mp4 for animated banners instead of gifs
-- button size banners 128x64 / 182x96
+- have a text for the banners on hover? could be simple text file in the dir
+- button size banners 128x64 / 128x96
 - icons?
 - 
 

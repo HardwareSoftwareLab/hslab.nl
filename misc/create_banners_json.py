@@ -5,7 +5,7 @@ from os import listdir
 # fuck python
 
 # @Banner_Support_Sizes
-supported_sizes = ["_512x128", "_128x512"]
+supported_sizes = ["_512x128", "_128x512", "_128x64"]
 
 def main():
 
@@ -29,13 +29,13 @@ def main():
 				if not f.startswith("banner_"): continue
 				if "." not in f: continue
 				name_without_extension = f[0:f.rfind(".")]
-				for size in supported_sizes:
-					if not name_without_extension.endswith(size):
-						continue
-					else:
-						break
 
-				data[size].append(f)
+
+
+				for size in supported_sizes:
+					if name_without_extension.endswith(size):
+						data[size].append(f)
+						break
 
 			for size in supported_sizes:
 				if len(data[size]):

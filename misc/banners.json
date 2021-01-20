@@ -2,35 +2,30 @@
     "_128x512": [
         {
             "banners": [
-                "banner_prolactin_128x512.jpeg",
-                "banner_128x64.png"
+                "banner_prolactin_128x512.jpeg"
             ],
             "site": "prolactin"
         },
         {
             "banners": [
-                "banner_bno_128x512.png",
-                "banner_128x64.png"
+                "banner_bno_128x512.png"
             ],
             "site": "banner_network_association"
         },
         {
             "banners": [
-                "banner_braitenberg_128x512.png",
-                "banner_128x64.png"
+                "banner_braitenberg_128x512.png"
             ],
             "site": "braitenberg"
         },
         {
             "banners": [
-                "banner_byos_128x512.png",
-                "banner_128x64.png"
+                "banner_byos_128x512.png"
             ],
             "site": "byos"
         },
         {
             "banners": [
-                "banner_128x64.png",
                 "banner_eggbot_128x512.png"
             ],
             "site": "eggbot"
@@ -43,7 +38,44 @@
         },
         {
             "banners": [
-                "banner_128x512.png",
+                "banner_128x512.png"
+            ],
+            "site": "workshop_camera_shutter"
+        }
+    ],
+    "_128x64": [
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "prolactin"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "banner_network_association"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "braitenberg"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "byos"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "eggbot"
+        },
+        {
+            "banners": [
                 "banner_128x64.png"
             ],
             "site": "workshop_camera_shutter"
