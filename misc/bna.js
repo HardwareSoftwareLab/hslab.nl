@@ -6,8 +6,15 @@ const main = function() {
 	// @Banner_Support_Sizes
 	const supported_sizes = ["_512x128", "_128x512", "_128x64"];
 
-	// const origin = document.location.origin; // http://hslab.nl | http://localhost:8888 | http://localhost:8888 
-	// console.log(origin);
+	// the site can be online on hslab.nl
+	// or on localhost, which could point directly to the hslab.nl folder
+	// or to a folder that contains a hslab.nl folder
+	// or it can be named hslab.nl-master.
+	// We have this complexity here so:
+	// A) it's more easy for students to do the setup
+	// B) we can change domain later and only have to deal with the pain here
+	// C) it deals with the different ways people are using localhost
+
 	const origin = (function() {
 		
 		if (document.location.href.includes('hslab.nl')) {
@@ -18,9 +25,18 @@ const main = function() {
 		}
 	})();
 
-	fetch(origin+"/misc/banners.json")
-	  .then(response => response.json())
-	  .then(json => load_banners(json));
+
+	let hover_descriptions = null;
+
+	fetch(origin+"/misc/hover_descriptions.json")
+		.then(response => response.json())
+		.then(json => {
+			hover_descriptions = json;
+			fetch(origin+"/misc/banners.json")
+				.then(response => response.json())
+				.then(json => load_banners(json));
+		}
+	);
 
 
 	function load_banners(json) {
@@ -62,7 +78,7 @@ const main = function() {
 				const is_mp4 = random_img_url.endsWith(".mp4");
 				if (is_mp4) {
 					banner_containers[i].innerHTML = 
-						`<a href="${href}"> \
+						`<a href="${href}" title="${hover_descriptions[banner_data["site"]]}"> \
 							<video width="${width}" height="${height}" autoplay loop muted> \
 								<source src="${random_img_url}" type="video/mp4"> \
 							</video>
@@ -70,7 +86,7 @@ const main = function() {
 				}
 				else {
 					banner_containers[i].innerHTML = 
-						`<a href="${href}"">` +
+						`<a href="${href}" title="${hover_descriptions[banner_data["site"]]}">` +
 							`<img src="${random_img_url}" width="${width}" height="${height}">`+
 						`</a>`;
 				}
