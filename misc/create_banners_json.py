@@ -7,7 +7,9 @@ from os import listdir
 # @Banner_Support_Sizes
 supported_sizes = ["_512x128", "_128x512", "_128x64"]
 
-def main():
+
+
+def create_banners_json():
 
 	to_json_data = {}
 	for size in supported_sizes:
@@ -30,8 +32,6 @@ def main():
 				if "." not in f: continue
 				name_without_extension = f[0:f.rfind(".")]
 
-
-
 				for size in supported_sizes:
 					if name_without_extension.endswith(size):
 						data[size].append(f)
@@ -49,6 +49,9 @@ def main():
 		out.write(json.dumps(to_json_data, sort_keys=True, indent=4))
 		out.close()
 
+
+def main():
+	create_banners_json()
 
 if __name__ == "__main__":
 	main()
