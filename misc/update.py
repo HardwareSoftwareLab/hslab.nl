@@ -17,6 +17,10 @@ def create_banners_json(ignore_folders=[]):
 	dirs = next(os.walk("../"))[1];
 
 	for folder in dirs:
+
+		if folder in ignore_folders:
+			continue
+
 		for _, _, files in os.walk("../"+folder):
 
 			data = {}
@@ -53,6 +57,9 @@ def create_hover_descriptions(ignore_folders=[]):
 
 	for folder in dirs:
 
+		if folder in ignore_folders:
+			continue
+
 		if not os.path.exists(f"../{folder}/hover_description.txt"):
 			continue
 
@@ -66,10 +73,17 @@ def create_hover_descriptions(ignore_folders=[]):
 
 
 def main():
+	print('update...')
 	f = open("ignore_folders.txt", "r")
 	ignore_folders = [line.strip('\n') for line in f.readlines()]
+	print(f'{"-"*20}\nignoring folders:\n')
+	for folder in ignore_folders: print(folder)
+	print(f'{"-"*20}')
+	print('create_banners_json...')
 	create_banners_json(ignore_folders)
+	print('create_hover_descriptions...')
 	create_hover_descriptions(ignore_folders)
+	print('done')
 
 
 if __name__ == "__main__":

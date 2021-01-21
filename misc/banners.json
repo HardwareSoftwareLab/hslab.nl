@@ -14,12 +14,6 @@
         },
         {
             "banners": [
-                "banner_128x512.png"
-            ],
-            "site": "template"
-        },
-        {
-            "banners": [
                 "banner_braitenberg_128x512.png"
             ],
             "site": "braitenberg"
@@ -66,12 +60,6 @@
             "banners": [
                 "banner_128x64.png"
             ],
-            "site": "template"
-        },
-        {
-            "banners": [
-                "banner_128x64.png"
-            ],
             "site": "braitenberg"
         },
         {
@@ -105,12 +93,6 @@
                 "banner_byos_512x128.png"
             ],
             "site": "byos"
-        },
-        {
-            "banners": [
-                "banner_512x128.png"
-            ],
-            "site": "template"
         },
         {
             "banners": [
