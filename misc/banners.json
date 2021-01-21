@@ -2,27 +2,27 @@
     "_128x512": [
         {
             "banners": [
-                "banner_prolactin_128x512.jpeg"
+                "banner_128x512.png"
             ],
-            "site": "prolactin"
-        },
-        {
-            "banners": [
-                "banner_bno_128x512.png"
-            ],
-            "site": "banner_network_association"
-        },
-        {
-            "banners": [
-                "banner_braitenberg_128x512.png"
-            ],
-            "site": "braitenberg"
+            "site": "workshop_camera_shutter"
         },
         {
             "banners": [
                 "banner_byos_128x512.png"
             ],
             "site": "byos"
+        },
+        {
+            "banners": [
+                "banner_128x512.png"
+            ],
+            "site": "template"
+        },
+        {
+            "banners": [
+                "banner_braitenberg_128x512.png"
+            ],
+            "site": "braitenberg"
         },
         {
             "banners": [
@@ -38,9 +38,15 @@
         },
         {
             "banners": [
-                "banner_128x512.png"
+                "banner_bno_128x512.png"
             ],
-            "site": "workshop_camera_shutter"
+            "site": "banner_network_association"
+        },
+        {
+            "banners": [
+                "banner_prolactin_128x512.jpeg"
+            ],
+            "site": "prolactin"
         }
     ],
     "_128x64": [
@@ -48,19 +54,7 @@
             "banners": [
                 "banner_128x64.png"
             ],
-            "site": "prolactin"
-        },
-        {
-            "banners": [
-                "banner_128x64.png"
-            ],
-            "site": "banner_network_association"
-        },
-        {
-            "banners": [
-                "banner_128x64.png"
-            ],
-            "site": "braitenberg"
+            "site": "workshop_camera_shutter"
         },
         {
             "banners": [
@@ -72,33 +66,39 @@
             "banners": [
                 "banner_128x64.png"
             ],
+            "site": "template"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "braitenberg"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
             "site": "eggbot"
         },
         {
             "banners": [
                 "banner_128x64.png"
             ],
-            "site": "workshop_camera_shutter"
+            "site": "banner_network_association"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
+            "site": "prolactin"
         }
     ],
     "_512x128": [
         {
             "banners": [
-                "banner_prolactin_512x128.jpeg"
+                "banner_512x128.png"
             ],
-            "site": "prolactin"
-        },
-        {
-            "banners": [
-                "banner_bno_512x128.png"
-            ],
-            "site": "banner_network_association"
-        },
-        {
-            "banners": [
-                "banner_braitenberg_512x128.png"
-            ],
-            "site": "braitenberg"
+            "site": "workshop_camera_shutter"
         },
         {
             "banners": [
@@ -108,15 +108,21 @@
         },
         {
             "banners": [
-                "banner_eggbot_512x128.png"
+                "banner_512x128.png"
             ],
-            "site": "eggbot"
+            "site": "template"
         },
         {
             "banners": [
-                "banner_512x128.mp4"
+                "banner_braitenberg_512x128.png"
             ],
-            "site": "mp4_banner_test"
+            "site": "braitenberg"
+        },
+        {
+            "banners": [
+                "banner_eggbot_512x128.png"
+            ],
+            "site": "eggbot"
         },
         {
             "banners": [
@@ -126,9 +132,21 @@
         },
         {
             "banners": [
-                "banner_512x128.png"
+                "banner_bno_512x128.png"
             ],
-            "site": "workshop_camera_shutter"
+            "site": "banner_network_association"
+        },
+        {
+            "banners": [
+                "banner_prolactin_512x128.jpeg"
+            ],
+            "site": "prolactin"
+        },
+        {
+            "banners": [
+                "banner_512x128.mp4"
+            ],
+            "site": "mp4_banner_test"
         }
     ]
 }
