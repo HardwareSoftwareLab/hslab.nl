@@ -7,171 +7,46 @@
 
 	<script type="text/javascript">
 
-
-const remove_double_banners = function() {
-	// @Banner_Support_Sizes
-	const supported_sizes = ["_512x128", "_128x512", "_128x64"];
-
-	for (let i = 0; i < supported_sizes.length; i++) {
-
-		const size = supported_sizes[i];
-		const banner_containers = document.getElementsByClassName("banners"+size);
-		let remove_starting_at_index = -1;
-		
-		for (let j = 1; j < banner_containers.length; j++) {
-			if (banner_containers[j].innerHTML == banner_containers[0].innerHTML) {
-				remove_starting_at_index = j;
-				break;
-			}
-		}
-		if (remove_starting_at_index != -1) {
-			for (let j = banner_containers.length-1; j >= remove_starting_at_index; j--) {
-				banner_containers[j].remove();
-			}	
-		}
-		
-	}
-}
-
-
 window.addEventListener("DOMContentLoaded", function() {
 
-	const callback = function(mutationsList, observer) {
-		observer.disconnect();
-		remove_double_banners();
-	}
+	bna.then(bna => {
 
-	const obs = new MutationObserver(callback);
-	const config = { attributes: true, childList: true, subtree: true };
-	obs.observe(document.body, config);
+		// console.log(bna);
+
+		site_table = document.getElementById("site_table");
+
+		for (let i = 0; i < bna.banners["_128x64"].length; i++) {
+
+			const banner_data = bna.banners["_128x64"][i];
+			const site = banner_data.site;
+			const hover_description = bna.hover_descriptions[site];
+
+			site_table.insertAdjacentHTML( 'beforeend',
+				`<tr>
+					<td>
+						<div class="banners_128x64" data-site="${site}"></div>
+					</td>
+					<td>
+						${hover_description}
+					</td>
+				</tr>
+				`
+			);
+		}
+
+		load_banners();
+
+	});
+
 });
 
 
 </script>
 
-<style type="text/css">
-
-.banner {
-	float: left;
-}
-
-</style>
-
 </head>
 <body>
 
-	<h1>All Banners</h1>	
-
-	
-<!-- random now -->
-
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_512x128"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x512"></div>
-	<div class="banners_128x64"></div>
-	<div class="banners_128x64"></div>
-
+	<table id="site_table"></table>	
 
 </body>
-
-
-
 </html>
-
-
-

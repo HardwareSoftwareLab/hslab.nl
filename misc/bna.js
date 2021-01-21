@@ -3,6 +3,31 @@
 // fuck javascript
 
 
+const create_banner_for_container = function(container, href, hover_description, img_url, width, height) {
+
+	// we also allow .mp4 since it is a way better format then .gif, but it has to be in a <video> element instead of <img>.
+	const is_mp4 = img_url.endsWith(".mp4");
+	if (is_mp4) {
+		container.innerHTML = 
+			`<a href="${href}" title="${hover_description}"> \
+				<video width="${width}" height="${height}" autoplay loop muted> \
+					<source src="${img_url}" type="video/mp4"> \
+				</video>
+			</a>`;
+	}
+	else {
+		container.innerHTML = 
+			`<a href="${href}" title="${hover_description}">` +
+				`<img src="${img_url}" width="${width}" height="${height}">`+
+			`</a>`;
+	}
+	container.style["width"] = `${width}px`;
+	container.style["height"] = `${height}px`;
+	container.classList.add("banner");
+}
+
+
+
 
 function load_banners() {
 
@@ -28,47 +53,47 @@ function load_banners() {
 			
 			for (let i = 0; i < banner_containers.length; i++) {
 
-				let banner_data = banners[ banner_index % banners.length ];
+				let container = banner_containers[i];
 
-				// avoid banners that point to the site we are already on
-				if (`/${banner_data["site"]}/` == document.location.pathname) {
-					banner_index++;
-					i--;
-					continue;
-				}
+				// it is possible to create a banner for a specific site
+				// e.g. <div class="banners_128x64" data-site="prolactin"></div>
+				if (container.dataset.site != undefined) {
 
-				let href = bna.hsl_root+"/"+banner_data["site"];
-				let all_img_urls = banner_data["banners"];
-				let random_img_url = bna.hsl_root+"/"+banner_data["site"]+"/"+all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
+					let site = container.dataset.site;
+					let href = bna.hsl_root+"/"+site;
+					let hover_description = bna.hover_descriptions[site];
+					let sized_banners = bna.sites[site].banners[size];
+					let img_url = bna.hsl_root+"/"+site+"/"+sized_banners[Math.floor(Math.random()*sized_banners.length)];
 
-				// we also allow .mp4 since it is a way better format then .gif, but it has to be in a <video> element instead of <img>.
-				const is_mp4 = random_img_url.endsWith(".mp4");
-				if (is_mp4) {
-					banner_containers[i].innerHTML = 
-						`<a href="${href}" title="${bna.hover_descriptions[banner_data["site"]]}"> \
-							<video width="${width}" height="${height}" autoplay loop muted> \
-								<source src="${random_img_url}" type="video/mp4"> \
-							</video>
-						</a>`;
+					create_banner_for_container(container, href, hover_description, img_url, width, height);
 				}
 				else {
-					banner_containers[i].innerHTML = 
-						`<a href="${href}" title="${bna.hover_descriptions[banner_data["site"]]}">` +
-							`<img src="${random_img_url}" width="${width}" height="${height}">`+
-						`</a>`;
+
+					let banner_data = banners[ banner_index % banners.length ];
+
+					// avoid banners that point to the site we are already on
+					if (`/${banner_data.site}/` == document.location.pathname) {
+						banner_index++;
+						i--;
+						continue;
+					}
+
+					let href = bna.hsl_root+"/"+banner_data.site;
+					let all_img_urls = banner_data.banners;
+					let random_img_url = bna.hsl_root+"/"+banner_data.site+"/"+all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
+
+					create_banner_for_container(container, href, bna.hover_descriptions[banner_data.site], random_img_url, width, height);
+					
+					banner_index++;
 				}
-				banner_containers[i].style["width"] = `${width}px`;
-				banner_containers[i].style["height"] = `${height}px`;
-				banner_containers[i].classList.add("banner");
-				banner_index++;
 			}
 
 			db.setItem('banner_index'+size, banner_index);
 		}
 
+
 	});	
 }
-
 
 
 
@@ -92,6 +117,8 @@ const create_bna = async function() {
 		"banners": {
 			// @Banner_Support_Sizes
 			"supported_sizes": ["_512x128", "_128x512", "_128x64"]
+		},
+		"sites": {
 		}
 	};
 
@@ -137,6 +164,23 @@ const create_bna = async function() {
 	return Promise.all(json_promises).then(jsons => {
 		bna.hover_descriptions = jsons[0];
 		bna.banners = Object.assign(jsons[1], bna.banners);
+
+		//
+		// fill in bna.sites
+		//
+		for (let i = 0; i < bna.banners.supported_sizes.length; i++) {
+			const size = bna.banners.supported_sizes[i];
+
+			for (let j = 0; j < bna.banners[size].length; j++) {
+
+				let sized_banners = bna.banners[size][j];
+				
+				if (bna.sites[sized_banners.site] == undefined) {
+					bna.sites[sized_banners.site] = {"banners": {}};
+				}
+				bna.sites[sized_banners.site].banners[size] = sized_banners.banners;	
+			}
+		}
 		return bna;
 	});
 
