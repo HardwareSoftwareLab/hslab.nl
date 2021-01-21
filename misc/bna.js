@@ -6,7 +6,7 @@
 
 function load_banners() {
 
-	bna.then(bna => {
+	return bna.then(bna => {
 
 		const db = window.localStorage;
 
