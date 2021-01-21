@@ -101,7 +101,10 @@ const create_bna = async function() {
 	// B) we can change domain later and only have to deal with the pain here
 	// C) it deals with the different ways people are using localhost
 	bna.hsl_root = (function() {
-		if (document.location.href.includes('hslab.nl')) {
+		if (document.location.href.includes('hslab.nl-master')) {
+			return document.location.href.substring(0, document.location.href.indexOf('hslab.nl-master')+15);	
+		}
+		else if (document.location.href.includes('hslab.nl')) {
 			return document.location.href.substring(0, document.location.href.indexOf('hslab.nl')+8);	
 		}
 		else {
