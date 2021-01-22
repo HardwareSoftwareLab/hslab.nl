@@ -1,1 +1,0 @@
-A workshop to make a camera shutter based on a sensor.
