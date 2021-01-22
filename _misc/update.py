@@ -6,6 +6,20 @@ import os.path
 # fuck python
 
 
+def first_check_if_folder_is_valid_for_site(folder, ignore_folders=[]) -> bool:
+
+	if folder in ignore_folders:
+		return False
+
+	# site_info.json is mandatory
+	if not os.path.exists(f"../{folder}/site_info.json"):
+		return False
+
+	return True
+
+
+
+
 def create_banners_json(ignore_folders=[]):
 
 	supported_sizes = [line.strip('\n') for line in open("supported_banner_sizes.txt").readlines()]
@@ -18,15 +32,13 @@ def create_banners_json(ignore_folders=[]):
 
 	for folder in dirs:
 
-		if folder in ignore_folders:
-			continue
-
-		# site_info.json is mandatory
-		if not os.path.exists(f"../{folder}/site_info.json"):
+		if not first_check_if_folder_is_valid_for_site(folder, ignore_folders):
 			continue
 
 		for _, _, files in os.walk("../"+folder):
 
+			unfound_sizes = supported_sizes.copy()
+		
 			data = {}
 			for size in supported_sizes:
 				data.setdefault(size,[])
@@ -39,8 +51,13 @@ def create_banners_json(ignore_folders=[]):
 				for size in supported_sizes:
 					if name_without_extension.endswith(size):
 						data[size].append(folder+"/"+f)
+						unfound_sizes.remove(size)
 						break
 
+			if len(unfound_sizes):
+				print(f"{folder} has the following missing banners: {unfound_sizes}")
+				# should all bannders be required?
+			
 			for size in supported_sizes:
 				if len(data[size]):
 					to_json_data[size].append({
@@ -62,10 +79,7 @@ def create_info_all_sites_json(ignore_folders=[]):
 
 	for folder in dirs:
 
-		if folder in ignore_folders:
-			continue
-
-		if not os.path.exists(f"../{folder}/site_info.json"):
+		if not first_check_if_folder_is_valid_for_site(folder, ignore_folders):
 			continue
 
 		with open(f"../{folder}/site_info.json") as json_file:
