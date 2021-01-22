@@ -34,7 +34,7 @@ def create_banners_json(ignore_folders=[]):
 
 				for size in supported_sizes:
 					if name_without_extension.endswith(size):
-						data[size].append(f)
+						data[size].append(folder+"/"+f)
 						break
 
 			for size in supported_sizes:

@@ -63,7 +63,7 @@ function load_banners() {
 					let href = bna.hsl_root+"/"+site;
 					let hover_description = bna.info_all_sites[site].hover_description;
 					let sized_banners = bna.sites[site].banners[size];
-					let img_url = bna.hsl_root+"/"+site+"/"+sized_banners[Math.floor(Math.random()*sized_banners.length)];
+					let img_url = sized_banners[Math.floor(Math.random()*sized_banners.length)];
 
 					create_banner_for_container(container, href, hover_description, img_url, width, height);
 				}
@@ -80,7 +80,7 @@ function load_banners() {
 
 					let href = bna.hsl_root+"/"+banner_data.site;
 					let all_img_urls = banner_data.banners;
-					let random_img_url = bna.hsl_root+"/"+banner_data.site+"/"+all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
+					let random_img_url = all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
 
 					create_banner_for_container(container, href, bna.info_all_sites[banner_data.site].hover_description, random_img_url, width, height);
 					
@@ -187,7 +187,11 @@ const create_bna = async function() {
 			for (let j = 0; j < bna.banners[size].length; j++) {
 
 				let sized_banners = bna.banners[size][j];
-				
+
+				for (let k = 0; k < sized_banners.banners.length; k++) {
+					sized_banners.banners[k] = bna.hsl_root+"/"+sized_banners.banners[k];
+				}
+
 				if (bna.sites[sized_banners.site] == undefined) {
 					bna.sites[sized_banners.site] = {"banners": {}};
 				}
