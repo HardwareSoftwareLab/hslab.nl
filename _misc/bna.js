@@ -135,21 +135,14 @@ const create_bna = async function() {
 		}
 	};
 
-
-	// the site can be online on hslab.nl
-	// or on localhost, which could point directly to the hslab.nl folder
-	// or to a folder that contains a hslab.nl folder
-	// or it can be named hslab.nl-master.
-	// We have this complexity here so:
-	// A) it's more easy for students to do the setup
-	// B) we can change domain later and only have to deal with the pain here
-	// C) it deals with the different ways people are using localhost
 	bna.hsl_root = (function() {
-		if (document.location.href.includes('hslab.nl-master')) {
-			return document.location.href.substring(0, document.location.href.indexOf('hslab.nl-master')+15);	
-		}
-		else if (document.location.href.includes('hslab.nl')) {
-			return document.location.href.substring(0, document.location.href.indexOf('hslab.nl')+8);	
+
+		// Some people point their localhost to a folder where multiple sites live.
+		// This can give issues with loading files. We deal with that here.
+		if (document.location.href.includes('localhost') || document.location.href.includes('127.0.0.1')) {
+			let index_of_hslab_dot_nl = document.location.href.indexOf('hslab.nl');
+			let slash_index = document.location.href.indexOf("/", index_of_hslab_dot_nl);
+			return document.location.href.substring(0, slash_index);
 		}
 		else {
 			return document.location.origin;
