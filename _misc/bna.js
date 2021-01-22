@@ -72,7 +72,7 @@ function load_banners() {
 					let banner_data = banners[ banner_index % banners.length ];
 
 					// avoid banners that point to the site we are already on
-					if (`/${banner_data.site}/` == bna.current_site.site_folder) {
+					if (`${banner_data.site}` == bna.current_site.site_folder) {
 						banner_index++;
 						i--;
 						continue;
