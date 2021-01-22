@@ -21,6 +21,10 @@ def create_banners_json(ignore_folders=[]):
 		if folder in ignore_folders:
 			continue
 
+		# site_info.json is mandatory
+		if not os.path.exists(f"../{folder}/site_info.json"):
+			continue
+
 		for _, _, files in os.walk("../"+folder):
 
 			data = {}
