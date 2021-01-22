@@ -61,7 +61,7 @@ function load_banners() {
 
 					let site = container.dataset.site;
 					let href = bna.hsl_root+"/"+site;
-					let hover_description = bna.info_each_site[site].hover_description;
+					let hover_description = bna.info_all_sites[site].hover_description;
 					let sized_banners = bna.sites[site].banners[size];
 					let img_url = bna.hsl_root+"/"+site+"/"+sized_banners[Math.floor(Math.random()*sized_banners.length)];
 
@@ -82,7 +82,7 @@ function load_banners() {
 					let all_img_urls = banner_data.banners;
 					let random_img_url = bna.hsl_root+"/"+banner_data.site+"/"+all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
 
-					create_banner_for_container(container, href, bna.info_each_site[banner_data.site].hover_description, random_img_url, width, height);
+					create_banner_for_container(container, href, bna.info_all_sites[banner_data.site].hover_description, random_img_url, width, height);
 					
 					banner_index++;
 				}
@@ -146,8 +146,8 @@ const create_bna = async function() {
 
 	let files = [];
 	const resources = [
-		bna.hsl_root+"/misc/info_all_sites.json", 
-		bna.hsl_root+"/misc/banners.json"
+		bna.hsl_root+"/_misc/info_all_sites.json", 
+		bna.hsl_root+"/_misc/banners.json"
 	];
 	resources.forEach(it => {
 		files.push(fetch(it))
@@ -162,7 +162,7 @@ const create_bna = async function() {
 	});
 
 	return Promise.all(json_promises).then(jsons => {
-		bna.info_each_site = jsons[0];
+		bna.info_all_sites = jsons[0];
 		bna.banners = Object.assign(jsons[1], bna.banners);
 
 		//

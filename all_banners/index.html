@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>All Banners</title>
-	<script type="text/javascript" src="../misc/bna.js"></script>
+	<script type="text/javascript" src="../_misc/bna.js"></script>
 
 	<script type="text/javascript">
 
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 			const banner_data = bna.banners["_128x64"][i];
 			const site = banner_data.site;
-			const hover_description = bna.hover_descriptions[site];
+			const hover_description = bna.info_all_sites[site].hover_description;
 
 			site_table.insertAdjacentHTML( 'beforeend',
 				`<tr>
