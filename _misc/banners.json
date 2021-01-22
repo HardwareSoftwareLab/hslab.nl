@@ -20,6 +20,12 @@
         },
         {
             "banners": [
+                "banner_128x512.png"
+            ],
+            "site": "hslab"
+        },
+        {
+            "banners": [
                 "banner_eggbot_128x512.png"
             ],
             "site": "eggbot"
@@ -66,6 +72,12 @@
             "banners": [
                 "banner_128x64.png"
             ],
+            "site": "hslab"
+        },
+        {
+            "banners": [
+                "banner_128x64.png"
+            ],
             "site": "eggbot"
         },
         {
@@ -99,6 +111,12 @@
                 "banner_braitenberg_512x128.png"
             ],
             "site": "braitenberg"
+        },
+        {
+            "banners": [
+                "banner_512x128.png"
+            ],
+            "site": "hslab"
         },
         {
             "banners": [

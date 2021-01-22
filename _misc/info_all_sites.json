@@ -19,6 +19,10 @@
         "hover_description": "A drawing machine to draw on eggs and other round objects, available in the lab.",
         "title": "Eggbot"
     },
+    "hslab": {
+        "hover_description": "HSLab",
+        "title": "HSLab"
+    },
     "mp4_banner_test": {
         "hover_description": "mp4 > gif",
         "title": "mp4 banner test"

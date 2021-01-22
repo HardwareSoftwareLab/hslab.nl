@@ -50,26 +50,6 @@ def create_banners_json(ignore_folders=[]):
 		out.close()
 
 
-def create_hover_descriptions_json(ignore_folders=[]):
-	to_json_data = {}
-	
-	dirs = next(os.walk("../"))[1];
-
-	for folder in dirs:
-
-		if folder in ignore_folders:
-			continue
-
-		if not os.path.exists(f"../{folder}/hover_description.txt"):
-			continue
-
-		f = open(f"../{folder}/hover_description.txt", "r")
-		to_json_data.setdefault(folder, f.read())
-	
-	with open('hover_descriptions.json', 'w', encoding='utf-8') as out:
-		out.write(json.dumps(to_json_data, sort_keys=True, indent=4))
-		out.close()
-
 
 def create_info_all_sites_json(ignore_folders=[]):
 	to_json_data = {}
@@ -103,8 +83,6 @@ def main():
 	print(f'{"-"*20}')
 	print('create_banners_json...')
 	create_banners_json(ignore_folders)
-	print('create_hover_descriptions_json...')
-	create_hover_descriptions_json(ignore_folders)
 	print('create_info_all_sites_json...')
 	create_info_all_sites_json(ignore_folders)
 	print('done')

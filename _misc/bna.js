@@ -72,7 +72,7 @@ function load_banners() {
 					let banner_data = banners[ banner_index % banners.length ];
 
 					// avoid banners that point to the site we are already on
-					if (`/${banner_data.site}/` == document.location.pathname) {
+					if (`/${banner_data.site}/` == bna.current_site.site_folder) {
 						banner_index++;
 						i--;
 						continue;
@@ -108,7 +108,13 @@ const create_css_styles = function() {
 }
 
 
-
+const set_html_title = function() {
+	bna.then(bna => {
+		if (document.title == "") {
+			document.title = bna.current_site.title;	
+		}
+	});
+}
 
 
 const create_bna = async function() {
@@ -119,6 +125,13 @@ const create_bna = async function() {
 			"supported_sizes": ["_512x128", "_128x512", "_128x64"]
 		},
 		"sites": {
+		},
+		"current_site": {
+			"site_folder": (function() {
+				let path = document.location.pathname;
+				path = path.substring(0, path.length-1);
+				return path.substring(path.lastIndexOf("/")+1);
+			})()
 		}
 	};
 
@@ -181,6 +194,12 @@ const create_bna = async function() {
 				bna.sites[sized_banners.site].banners[size] = sized_banners.banners;	
 			}
 		}
+
+		bna.current_site = Object.assign(bna.info_all_sites[bna.current_site.site_folder], bna.current_site);
+		bna.current_site = Object.assign(bna.sites[bna.current_site.site_folder], bna.current_site);
+
+		dbna = bna;
+
 		return bna;
 	});
 
@@ -188,12 +207,14 @@ const create_bna = async function() {
 
 
 let bna = create_bna();
+let dbna; // for debug purposes in the console only, since bna is a Promise and they are hard to work with in the console (imposible?)
 
 (function(){
 	
 	window.addEventListener("DOMContentLoaded", function() {
 		create_css_styles();
 		load_banners();
+		set_html_title();
 	});
 
 })();
