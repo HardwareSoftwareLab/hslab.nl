@@ -126,18 +126,14 @@ const p_bna = (async function() {
 			for (let i = 0; i < banner_containers.length; i++) {
 				let container = banner_containers[i];
 
+				let site;
+
 				// it is possible to create a banner for a specific site
 				// e.g. <div class="banners_128x64" data-site="prolactin"></div>
 				if (container.dataset.site != undefined) {
 
 					const _site = container.dataset.site;
-					const site = data.sites[_site];
-					const all_img_urls = site.banner_sources[size];
-					const random_img_url = all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
-
-					create_banner_for_container(container, 
-						site.href, site.hover_description, 
-						random_img_url, width, height);
+					site = data.sites[_site];
 				}
 				else {
 					// next banner that fits
@@ -156,20 +152,19 @@ const p_bna = (async function() {
 						index %= sites.length;
 					}
 
-					const site = sites[index];
+					site = sites[index];
 					
-					const all_img_urls = site.banner_sources[size];
-					const random_img_url = all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
-
-					create_banner_for_container(container, 
-						site.href, site.hover_description, 
-						random_img_url, width, height);
-					
-
 					index++;
 					index %= sites.length;
 					db.setItem('index_for_size'+size, index);
 				}
+
+				const all_img_urls = site.banner_sources[size];
+				const img_url = all_img_urls[Math.floor(Math.random()*all_img_urls.length)];
+
+				create_banner_for_container(container, 
+					site.href, site.hover_description, 
+					img_url, width, height);
 
 			}
 		}
