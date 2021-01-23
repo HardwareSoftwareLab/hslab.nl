@@ -5,26 +5,19 @@ let _dbna; // for debugging purposes only!
 
 const p_bna = (async function() {
 
-	const hsl_root = (function() {
-		// Some people point their localhost to a folder where multiple sites live.
-		// This can give issues with loading files. We deal with that here.
-		if (document.location.href.includes('localhost') || document.location.href.includes('127.0.0.1')) {
-			let index_of_hslab_dot_nl = document.location.href.indexOf('hslab.nl');
-			let slash_index = document.location.href.indexOf("/", index_of_hslab_dot_nl);
-			return document.location.href.substring(0, slash_index);
-		}
-		else {
-			return document.location.origin;
-		}
-	})();
 
+	const project_root = (function() {
+		let href = document.location.href;
+		href = href.substring(0, href.length-1); // remove trailing /
+		return href.substring(0, href.lastIndexOf("/"));
+	})();
 
 	//
 	// data.json
 	//
 	const data = {
-		...{"hsl_root": hsl_root}, 
-		... await (await fetch(hsl_root+"/_misc/data.json")).json()
+		...{"project_root": project_root}, 
+		... await (await fetch(project_root+"/_misc/data.json")).json()
 	}
 
 	//
@@ -35,10 +28,10 @@ const p_bna = (async function() {
 		data.supported_banner_sizes.forEach(size => {
 			const arr = data.sites[site].banner_sources[size];
 			for (const i in arr) {
-				arr[i] = `${hsl_root}/${site}/${arr[i]}`;
+				arr[i] = `${project_root}/${site}/${arr[i]}`;
 			}
 		});
-		data.sites[site].href = `${hsl_root}/${site}`;
+		data.sites[site].href = `${project_root}/${site}`;
 	}
 
 	//
@@ -177,6 +170,19 @@ const p_bna = (async function() {
 	}
 
 
+	const fullscreen = function() {
+
+		const elm = document.documentElement;
+
+		var requestMethod = elm.requestFullScreen || 
+	    					elm.webkitRequestFullScreen || 
+	    					elm.mozRequestFullScreen || 
+	    					elm.msRequestFullScreen;
+
+   		requestMethod.call(elm);
+	}
+
+
 	//
 	// library
 	//
@@ -186,6 +192,7 @@ const p_bna = (async function() {
 		"create_css_styles": create_css_styles,
 		"set_html_title": set_html_title,
 		"load_banners": load_banners,
+		"fullscreen": fullscreen
 	}
 
 	_dbna = result;
