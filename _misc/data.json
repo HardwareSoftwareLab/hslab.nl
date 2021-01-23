@@ -1,0 +1,164 @@
+{
+    "ignore_folders": [
+        ".git",
+        "template",
+        "_misc"
+    ],
+    "one_banner_of_each_size_required": false,
+    "sites": {
+        "all_banners": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_128x512.png"
+                ],
+                "_512x128": [
+                    "banner_512x128.png"
+                ]
+            },
+            "folder": "all_banners",
+            "hover_description": "An overview of all the sites.",
+            "title": "sitemap"
+        },
+        "banner_network_association": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_bno_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_bno_512x128.png"
+                ]
+            },
+            "folder": "banner_network_association",
+            "hover_description": "Information about those banner related websites.",
+            "title": "Banner Network Association"
+        },
+        "braitenberg": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_braitenberg_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_braitenberg_512x128.png"
+                ]
+            },
+            "folder": "braitenberg",
+            "hover_description": "Hackaton!",
+            "title": "Braitenberg Hackaton"
+        },
+        "byos": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_byos_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_byos_512x128.png"
+                ]
+            },
+            "folder": "byos",
+            "hover_description": "About evenings where we drink milk and show each other the websites we are making!",
+            "title": "Bring Your Own Site"
+        },
+        "eggbot": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_eggbot_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_eggbot_512x128.png"
+                ]
+            },
+            "folder": "eggbot",
+            "hover_description": "A drawing machine to draw on eggs and other round objects, available in the lab.",
+            "title": "Eggbot"
+        },
+        "hslab": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_512x128.png"
+                ]
+            },
+            "folder": "hslab",
+            "hover_description": "HSLab",
+            "title": "HSLab"
+        },
+        "mp4_banner_test": {
+            "banner_sources": {
+                "_512x128": [
+                    "banner_512x128.mp4"
+                ]
+            },
+            "folder": "mp4_banner_test",
+            "hover_description": "mp4 > gif",
+            "title": "mp4 banner test"
+        },
+        "prolactin": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_prolactin_128x512.jpeg"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_prolactin_512x128.jpeg"
+                ]
+            },
+            "folder": "prolactin",
+            "hover_description": "Please visit to support us, we need milk, we need you.\nMaria probably comes with a text that contains a thousand lines instead of a single one,\nso let's check for multiple lines right now...",
+            "title": "Prolactin"
+        },
+        "workshop_camera_shutter": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_512x128.png"
+                ]
+            },
+            "folder": "workshop_camera_shutter",
+            "hover_description": "A workshop to make a camera shutter based on a sensor.",
+            "title": "Sensor Shutter"
+        }
+    },
+    "supported_banner_sizes": [
+        "_512x128",
+        "_128x512",
+        "_128x64"
+    ],
+    "width_height_lookup": {
+        "_128x512": [
+            128,
+            512
+        ],
+        "_128x64": [
+            128,
+            64
+        ],
+        "_512x128": [
+            512,
+            128
+        ]
+    }
+}

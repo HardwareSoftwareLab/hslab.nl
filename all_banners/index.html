@@ -12,38 +12,35 @@ td {
 
 <script type="text/javascript">
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", async function() {
 
-	bna.then(bna => {
+	const bna = await p_bna;
 
-		// console.log(bna);
+	// console.log(bna);
 
-		site_table = document.getElementById("site_table");
+	site_table = document.getElementById("site_table");
 
-		for (let i = 0; i < bna.banners["_128x64"].length; i++) {
+	for (let i = 0; i < bna.sites_that_have_banner_size_x["_128x64"].length; i++) {
 
-			const banner_data = bna.banners["_128x64"][i];
-			const site = banner_data.site;
-			const hover_description = bna.info_all_sites[site].hover_description;
-			const title = bna.info_all_sites[site].title;
+		const site = bna.sites_that_have_banner_size_x["_128x64"][i];
 
-			site_table.insertAdjacentHTML( 'beforeend',
-				`<tr>
-					<td>
-						<div class="banners_128x64" data-site="${site}"></div>
-					</td>
-					<td>
-						<b>${title}</b><br>
-						<div style="max-width: 400px">${hover_description}</div>
-					</td>
-				</tr>
-				`
-			);
-		}
+		site_table.insertAdjacentHTML( 'beforeend',
+			`<tr>
+				<td>
+					<div class="banners_128x64" data-site="${site.folder}"></div>
+				</td>
+				<td>
+					<b>${site.title}</b><br>
+					<div style="max-width: 400px">${site.hover_description}</div>
+				</td>
+			</tr>
+			`
+		);
+	}
 
-		load_banners();
+	bna.load_banners();
 
-	});
+
 
 });
 

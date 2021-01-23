@@ -1,0 +1,13 @@
+{
+	"supported_banner_sizes": [
+		"_512x128",
+		"_128x512",
+		"_128x64"
+	],
+	"one_banner_of_each_size_required": false,
+	"ignore_folders": [
+		".git",
+		"template",
+		"_misc"
+	]
+}
