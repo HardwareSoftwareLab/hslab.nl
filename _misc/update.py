@@ -27,7 +27,8 @@ def create_dict_banner_sources(folder, supported_sizes) -> ():
 			for size in supported_sizes:
 				if name_without_extension.endswith(size):
 					data[size].append(f)
-					unfound_sizes.remove(size)
+					if size in unfound_sizes: 
+						unfound_sizes.remove(size)
 					break
 		
 		for size in supported_sizes:
