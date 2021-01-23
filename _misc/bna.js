@@ -133,7 +133,13 @@ const p_bna = (async function() {
 				if (container.dataset.site != undefined) {
 
 					const _site = container.dataset.site;
-					site = data.sites[_site];
+					if (data.sites[_site]) {
+						site = data.sites[_site];	
+					}
+					else {
+						console.error(`banner suggestion for site '${_site}', but it does not exist!`);
+						site = data.sites_that_have_banner_size_x[size][0];
+					}
 				}
 				else {
 					// next banner that fits
