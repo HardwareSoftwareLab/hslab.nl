@@ -106,8 +106,40 @@ def main():
 			out.write(json.dumps(json_file, sort_keys=True, indent=4))
 			out.close()
 
+	#
+	# sites_in_order_of_add.json
+	#	
+	log = None
+
+	if not os.path.exists('sites_in_order_of_add.json'):
+		log = {
+			"sites_in_order_of_add": []
+		}
+	else :
+		with open('sites_in_order_of_add.json', 'r') as f:
+			log = json.load(f)
+
+	# first remove sites that are not there anymore
+	to_remove = []
+	for site in log["sites_in_order_of_add"]:
+		if site not in json_file["sites"]:
+			to_remove.append(site)
+
+	for site in to_remove:
+		log["sites_in_order_of_add"].remove(site)
+
+	for site in json_file["sites"]:
+		if site not in log["sites_in_order_of_add"]:
+			log["sites_in_order_of_add"].append(site)
+
+	with open('sites_in_order_of_add.json', 'w', encoding='utf-8') as out:
+		out.write(json.dumps(log, sort_keys=True, indent=4))
+		out.close()
+	
+
 	for error in errors:
 		print(error)
+
 
 	print("done")
 
