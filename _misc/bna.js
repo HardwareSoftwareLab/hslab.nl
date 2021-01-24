@@ -63,11 +63,38 @@ const p_bna = (async function() {
 	//
 
 	const create_css_styles = function() {
-		var sheet = document.createElement('style')
-		sheet.innerHTML = 
+		const sheet = document.createElement('style');
+
+		let css = 
 			`.banner {
 				border: 1px solid black;
-			}`;
+			}
+
+			.banner img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.banner video {
+				width: 100%;
+				height: 100%;
+			}
+			`
+		;
+
+		data.supported_banner_sizes.forEach((size) => {
+			const width  = data.width_height_lookup[size][0];
+			const height = data.width_height_lookup[size][1];
+
+			css += '\n'+
+			`.banners_${width}x${height} {
+				width: ${width};
+				height: ${height};
+			}`
+
+		});
+
+		sheet.innerHTML = css;;
 		document.head.insertBefore(sheet, document.head.firstChild);
 	}
 
@@ -86,7 +113,7 @@ const p_bna = (async function() {
 		if (is_mp4) {
 			container.innerHTML = 
 				`<a href="${href}" title="${hover_description}"> \
-					<video width="${width}" height="${height}" autoplay loop muted> \
+					<video autoplay loop muted> \
 						<source src="${img_url}" type="video/mp4"> \
 					</video>
 				</a>`;
@@ -94,11 +121,9 @@ const p_bna = (async function() {
 		else {
 			container.innerHTML = 
 				`<a href="${href}" title="${hover_description}">` +
-					`<img src="${img_url}" width="${width}" height="${height}">`+
+					`<img src="${img_url}">`+
 				`</a>`;
 		}
-		container.style["width"] = `${width}px`;
-		container.style["height"] = `${height}px`;
 		container.classList.add("banner");
 	}
 
