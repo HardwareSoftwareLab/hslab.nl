@@ -1,0 +1,14 @@
+{
+	"title": "favicontrol",
+	"hover_description": "Customize the favicon!",
+	"browser_tabs": [
+		{
+			"icon": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"icon": "stackoverflow",
+			"title": "paste"
+		}
+	]
+}

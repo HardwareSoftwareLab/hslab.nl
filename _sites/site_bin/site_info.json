@@ -1,0 +1,14 @@
+{
+	"title": "site bin",
+	"hover_description": "An overview of all the sites.",
+	"browser_tabs": [
+		{
+			"icon": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"icon": "stackoverflow",
+			"title": "paste"
+		}
+	]
+}

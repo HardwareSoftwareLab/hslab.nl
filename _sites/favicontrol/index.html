@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/png" width=32px>
+<script type="text/javascript" src="../../_misc/bna.js"></script>
+<h1>Favicontrol</h1>
+<div class="banner_512x128"></div>
+<div class="banner_128x512"></div>
+<img src="favicon_milk_32.png">
+
+<script type="text/javascript">
+"use strict";	
+// favicon = document.querySelector('link[rel~="icon"]');
+// favicon.href = "favicon_milk_32.png";
+// console.log(favicon);
+
+var link = document.querySelector("link[rel~='icon']");
+if (!link) {
+	console.log("not");
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+link.href="favicon_milk_32.png";
+console.log(link);
+
+</script>

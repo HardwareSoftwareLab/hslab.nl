@@ -1,0 +1,26 @@
+{
+	"title": "fullscreen test",
+	"hover_description": "going full! fullscreen!",
+	"browser_tabs": [
+		{
+			"icon": "stackoverflow",
+			"title": "div floating left"
+		},
+		{
+			"icon": "google",
+			"title": "why does css suck so hard"
+		},
+		{
+			"icon": "youtube",
+			"title": "Relaxing Music for Stress Relief"
+		},
+		{
+			"icon": null,
+			"title": null
+		},
+		{
+			"icon": "cheaptickets",
+			"title": "CheapTickets.nl | Buitenland"
+		}
+	]
+}

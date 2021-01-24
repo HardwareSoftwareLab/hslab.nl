@@ -1,0 +1,265 @@
+<meta charset="UTF-8">
+<script type="text/javascript" src="../../_misc/bna.js"></script>
+<style type="text/css">
+
+
+:root {
+	--tab_background_color_dark: #2D2F31;
+	--tab_background_color_dark_hover: #414446;
+	--tab_background_color_light: #F9F9FA;
+	--tab_stroke_top_active_tab: #0A84FF;
+	--tab_stroke_vertical_divider: #6A6F79;
+	--tab_font_color: #BCBEC1;
+	--tab_close_button_hover: #535456;
+	--not_fullscreen_blur: 0px;
+	--not_fullscreen_grayscale: 0%;
+	--fullscreen_blur: 0px;
+	--fullscreen_grayscale: 0%;
+}
+
+
+html:not(:fullscreen) {
+	-webkit-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	-moz-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	-ms-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+}
+html:not(:-webkit-full-screen) {
+	-webkit-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	-moz-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	-ms-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+}
+html:not(:moz-full-screen) {
+	-webkit-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	-moz-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	-ms-filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+	filter: grayscale(var(--not_fullscreen_grayscale)) blur(var(--not_fullscreen_blur));
+}
+
+
+html:fullscreen {
+	-webkit-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	-moz-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	-ms-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+}
+html:-webkit-full-screen {
+	-webkit-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	-moz-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	-ms-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+}
+html:moz-full-screen {
+	-webkit-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	-moz-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	-ms-filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+	filter: grayscale(var(--fullscreen_grayscale)) blur(var(--fullscreen_blur));
+}
+
+
+
+#tab_bar {
+	/*display: none;*/
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	/*height: 32px;*/
+	background-color: var(--tab_background_color_dark);
+	border-top: 1px solid grey;
+}
+
+
+body {
+	margin-top: 40px;
+}
+
+html:fullscreen #tab_bar {
+    display: block;
+}
+
+html:-moz-full-screen #tab_bar {
+    display: block;
+}
+
+html:-webkit-full-screen #tab_bar {
+    display: block;
+}
+
+.tab {
+	height: 32px;
+	width: 256px;
+	float: left;
+	border-left: 1px solid var(--tab_stroke_vertical_divider);
+
+}
+
+
+.tab:not(.active_tab) {
+	cursor: not-allowed;
+}
+
+.tab:not(.active_tab):hover {
+	background-color: var(--tab_background_color_dark_hover);
+}
+
+.active_tab {
+	cursor: default;
+}
+
+
+.tab:last-child {
+	border-right: 1px solid var(--tab_stroke_vertical_divider);
+}
+
+.active_tab {
+	background-color: var(--tab_background_color_light);
+}
+
+.tab-icon {
+	width: 16px;
+	height: 16px;
+	padding: 8px;
+	float: left;
+}
+
+.tab-icon img {
+	width: 16px;
+	height: 16px;
+}
+
+
+.tab-text {
+	float: left;
+	color: var(--tab_font_color);
+	font-family: sans-serif;
+	line-height: 32px;
+	font-size: 12px;
+	overflow: hidden;
+	/*width: 200px;*/
+	/*height: 32px;*/
+	
+}
+
+.tab-close_button {
+	/*width: 16px;
+	height: 32px;
+	padding-right: 8px;
+	float: right;
+	color: var(--tab_font_color);
+	font-family: sans-serif;
+	line-height: 32px;
+	font-size: 14px;
+	background-color: red;*/
+	width: 20px;
+	height: 20px;
+	padding: 6px;
+	border-radius: 3px;
+	/*background-color: blue;*/
+	background-clip: content-box;
+	float: right;
+	color: var(--tab_font_color);
+	cursor: wait;
+	
+}
+
+.tab-close_button:hover {
+	/*background-color: var(--tab_close_button_hover);*/
+}
+
+
+
+
+.active_tab .tab-text {
+	color: #181818;
+}
+
+.active_tab .tab-close_button {
+	color: #525252;
+}
+
+.banner {
+	border: 2px solid red;
+}
+
+
+</style>
+
+
+<div id="tab_bar">
+	<!-- <img src="bar_buttons.png"> -->
+	<!-- <div class="tab">
+		<div class="tab-icon"><img src="../_favicons/youtube.ico"></div>
+		<div class="tab-text">(35) Unit 13 S02E03</div>
+		<div class="tab-close_button">✕</div>
+	</div>
+
+	<div class="tab">
+		<div class="tab-icon"><img src="../_favicons/stackoverflow.ico"></div>
+		<div class="tab-text">Why CSS sucks</div>
+		<div class="tab-close_button">✕</div>
+	</div>
+
+	<div class="tab">
+		<div class="tab-icon"><img src="../_favicons/google.ico"></div>
+		<div class="tab-text">Which idiot invented cssWhich idiot invented cssWhich idiot invented cssWhich idiot invented css</div>
+		<div class="tab-close_button">✕</div>
+	</div> -->
+
+
+</div>
+
+<h1>Fullscreen</h1>
+<button onclick="javascript:toggle_fullscreen()">fullscreen</button>
+<br>
+<br>
+<div class="banner_512x128"></div>
+<div class="banner_128x512"></div>
+<div class="banner_128x64"></div>
+
+
+<script type="text/javascript">
+	
+const toggle_fullscreen = async function() {
+	bna = await p_bna;
+	bna.toggle_fullscreen();
+}
+
+
+onload = async ()=> {
+	bna = await p_bna;
+
+	const browser_tabs = bna.current_site.browser_tabs;
+
+	const tab_bar = document.getElementById("tab_bar");
+
+	browser_tabs.forEach((tab) => {
+
+		let site;
+		let title;
+		let active_tab = false;
+
+		if (tab.icon == null && tab.title == null) {
+			icon =  "hslab"; // TODO
+			title = bna.current_site.title;
+			active_tab = true;
+		}
+		else {
+			icon = tab.icon;
+			title = tab.title;
+		}
+
+		let _tab = `<div class="tab`+(active_tab?` active_tab`:``)+`">
+			<div class="tab-icon"><img src="../../_favicons/${icon}.ico"></div>
+			<div class="tab-text">${title}</div>
+			<div class="tab-close_button">✕</div>
+		</div>`;
+		
+		tab_bar.insertAdjacentHTML('beforeend', _tab);
+	});
+
+}
+
+
+</script>

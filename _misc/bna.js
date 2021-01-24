@@ -6,18 +6,18 @@ let _dbna; // for debugging purposes only!
 const p_bna = (async function() {
 
 
-	const project_root = (function() {
+	const _project_root = (function() {
 		let href = document.location.href;
-		href = href.substring(0, href.length-1); // remove trailing /
-		return href.substring(0, href.lastIndexOf("/"));
+		return href.substring(0, href.indexOf("/_sites/"));
 	})();
 
+	
 	//
 	// data.json
 	//
 	const data = {
-		...{"project_root": project_root}, 
-		... await (await fetch(project_root+"/_misc/data.json")).json()
+		...{"project_root": _project_root}, 
+		... await (await fetch(_project_root+"/_misc/data.json")).json()
 	}
 
 	//
@@ -28,10 +28,10 @@ const p_bna = (async function() {
 		data.supported_banner_sizes.forEach(size => {
 			const arr = data.sites[site].banner_sources[size];
 			for (const i in arr) {
-				arr[i] = `${project_root}/${site}/${arr[i]}`;
+				arr[i] = `${_project_root}/_sites/${site}/${arr[i]}`;
 			}
 		});
-		data.sites[site].href = `${project_root}/${site}`;
+		data.sites[site].href = `${_project_root}/_sites/${site}`;
 	}
 
 	//
@@ -148,12 +148,12 @@ const p_bna = (async function() {
 				// e.g. <div class="banner_128x64" data-site="prolactin"></div>
 				if (container.dataset.site != undefined) {
 
-					const _site = container.dataset.site;
-					if (data.sites[_site]) {
-						site = data.sites[_site];	
+					const req_site = container.dataset.site;
+					if (data.sites[req_site]) {
+						site = data.sites[req_site];	
 					}
 					else {
-						console.error(`banner suggestion for site '${_site}', but it does not exist!`);
+						console.error(`banner suggestion for site '${req_site}', but it does not exist!`);
 						site = data.sites_that_have_banner_size_x[size][0];
 					}
 				}

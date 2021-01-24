@@ -10,6 +10,7 @@
         "fullscreen_test",
         "favicontrol",
         "prolactin",
-        "mp4_banner_test"
+        "mp4_banner_test",
+        "site_bin"
     ]
 }

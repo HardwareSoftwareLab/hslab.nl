@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+<title>All Banners</title>
+<script type="text/javascript" src="../../_misc/bna.js"></script>
+
+<style type="text/css">
+
+td {
+	vertical-align: top;
+}	
+
+</style>
+
+<script type="text/javascript">
+
+window.addEventListener("DOMContentLoaded", async function() {
+
+	const bna = await p_bna;
+
+	const sites_in_order_of_add = fetch("../_misc/sites_in_order_of_add.json");
+
+	console.log(sites_in_order_of_add);
+
+	// console.log(bna);
+
+	site_table = document.getElementById("site_table");
+
+	for (let i = 0; i < bna.sites_that_have_banner_size_x["_128x64"].length; i++) {
+
+		const site = bna.sites_that_have_banner_size_x["_128x64"][i];
+
+		site_table.insertAdjacentHTML('beforeend',
+			`<tr>
+				<td>
+					<div class="banner_128x64" data-site="${site.folder}"></div>
+				</td>
+				<td>
+					<b>${site.title}</b><br>
+					<div style="max-width: 400px">${site.hover_description}</div>
+				</td>
+			</tr>
+			`
+		);
+	}
+
+	bna.load_banners();
+
+
+
+});
+
+
+</script>
+
+<table id="site_table"></table>	
