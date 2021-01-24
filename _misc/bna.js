@@ -170,18 +170,49 @@ const p_bna = (async function() {
 	}
 
 
-	const fullscreen = function() {
+	const request_fullscreen = function() {
 
 		const elm = document.documentElement;
 
-		var requestMethod = elm.requestFullScreen || 
-	    					elm.webkitRequestFullScreen || 
-	    					elm.mozRequestFullScreen || 
-	    					elm.msRequestFullScreen;
+		const method = elm.requestFullScreen || 
+							elm.webkitRequestFullScreen || 
+							elm.mozRequestFullScreen || 
+							elm.msRequestFullScreen;
 
-   		requestMethod.call(elm);
+		return method.call(elm);
 	}
 
+	const exit_fullscreen = function() {
+
+		if (document.exitFullscreen) {
+			return document.exitFullscreen();
+		}
+		else if (document.mozCancelFullScreen) {
+		    return document.mozCancelFullScreen();
+		}
+		else if (document.webkitCancelFullScreen) {
+		    return document.webkitCancelFullScreen();
+		}
+		else if (document.msExitFullscreen) {
+		    return document.msExitFullscreen();
+		}
+	}
+
+	const is_fullscreen = function() {
+		if (document.fullscreen != undefined) return document.fullscreen;
+		if (document.mozFullScreen != undefined) return document.mozFullScreen;
+		if (document.webkitIsFullScreen != undefined) return document.webkitIsFullScreen;
+		if (document.msFullscreenElement != undefined) return document.msFullscreenElement;
+	}
+
+	const toggle_fullscreen = function() {
+		if (is_fullscreen()) {
+			return exit_fullscreen();
+		}
+		else {
+			return request_fullscreen();
+		}
+	}
 
 	//
 	// library
@@ -192,7 +223,10 @@ const p_bna = (async function() {
 		"create_css_styles": create_css_styles,
 		"set_html_title": set_html_title,
 		"load_banners": load_banners,
-		"fullscreen": fullscreen
+		"request_fullscreen": request_fullscreen,
+		"exit_fullscreen": exit_fullscreen,
+		"is_fullscreen": is_fullscreen,
+		"toggle_fullscreen": toggle_fullscreen
 	}
 
 	_dbna = result;
