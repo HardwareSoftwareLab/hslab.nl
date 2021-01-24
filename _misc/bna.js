@@ -106,8 +106,6 @@ const p_bna = (async function() {
 
 	function load_banners() {
 
-		const db = window.localStorage;
-
 		for (let i = 0; i < data.supported_banner_sizes.length; i++) {
 			const size = data.supported_banner_sizes[i];
 
@@ -138,6 +136,7 @@ const p_bna = (async function() {
 					// next banner that fits
 					const sites = data.sites_that_have_banner_size_x[size];
 					
+					const db = window.localStorage;
 					let index = db.getItem('index_for_size'+size);
 					if (index == null) {
 						// we don't want the choosen banner on a first visit to be the same for 
