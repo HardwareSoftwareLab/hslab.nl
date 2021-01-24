@@ -3,11 +3,11 @@
 	"hover_description": "A workshop to make a camera shutter based on a sensor.",
 	"browser_tabs": [
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "copy"
 		},
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "paste"
 		}
 	]

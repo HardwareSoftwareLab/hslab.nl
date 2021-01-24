@@ -17,11 +17,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -43,11 +43,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -69,11 +69,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -95,11 +95,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -121,11 +121,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -147,11 +147,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -173,23 +173,23 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "div floating left"
                 },
                 {
-                    "site": "google",
+                    "icon": "google",
                     "title": "why does css suck so hard"
                 },
                 {
-                    "site": "youtube",
+                    "icon": "youtube",
                     "title": "Relaxing Music for Stress Relief"
                 },
                 {
-                    "site": null,
+                    "icon": null,
                     "title": null
                 },
                 {
-                    "site": "cheaptickets",
+                    "icon": "cheaptickets",
                     "title": "CheapTickets.nl | Buitenland"
                 }
             ],
@@ -211,43 +211,43 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "div floating left"
                 },
                 {
-                    "site": "google",
+                    "icon": "google",
                     "title": "why does css suck so hard"
                 },
                 {
-                    "site": "youtube",
+                    "icon": "youtube",
                     "title": "Relaxing Music for Stress Relief"
                 },
                 {
-                    "site": "google",
+                    "icon": "google",
                     "title": "why does javascript suck so hard"
                 },
                 {
-                    "site": "youtube",
+                    "icon": "youtube",
                     "title": "WHEN LIFE BREAKS YOU - Powerful Motivational Speech"
                 },
                 {
-                    "site": null,
+                    "icon": null,
                     "title": null
                 },
                 {
-                    "site": "google",
+                    "icon": "google",
                     "title": "get rich fast"
                 },
                 {
-                    "site": "google",
+                    "icon": "google",
                     "title": "how to dispose a body"
                 },
                 {
-                    "site": "google",
+                    "icon": "google",
                     "title": "countries without an extradition agreement"
                 },
                 {
-                    "site": "cheaptickets",
+                    "icon": "cheaptickets",
                     "title": "CheapTickets.nl | Russia"
                 }
             ],
@@ -263,11 +263,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
@@ -290,17 +290,43 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],
             "folder": "prolactin",
             "hover_description": "Please visit to support us, we need milk, we need you.\nMaria probably comes with a text that contains a thousand lines instead of a single one,\nso let's check for multiple lines right now...",
             "title": "Prolactin"
+        },
+        "site_bin": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_512x128.png"
+                ]
+            },
+            "browser_tabs": [
+                {
+                    "icon": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "icon": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
+            "folder": "site_bin",
+            "hover_description": "An overview of all the sites.",
+            "title": "site bin"
         },
         "workshop_camera_shutter": {
             "banner_sources": {
@@ -316,11 +342,11 @@
             },
             "browser_tabs": [
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "copy"
                 },
                 {
-                    "site": "stackoverflow",
+                    "icon": "stackoverflow",
                     "title": "paste"
                 }
             ],

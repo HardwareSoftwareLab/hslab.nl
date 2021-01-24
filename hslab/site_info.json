@@ -3,43 +3,43 @@
 	"hover_description": "HSLab",
 	"browser_tabs": [
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "div floating left"
 		},
 		{
-			"site": "google",
+			"icon": "google",
 			"title": "why does css suck so hard"
 		},
 		{
-			"site": "youtube",
+			"icon": "youtube",
 			"title": "Relaxing Music for Stress Relief"
 		},
 		{
-			"site": "google",
+			"icon": "google",
 			"title": "why does javascript suck so hard"
 		},
 		{
-			"site": "youtube",
+			"icon": "youtube",
 			"title": "WHEN LIFE BREAKS YOU - Powerful Motivational Speech"
 		},
 		{
-			"site": null,
+			"icon": null,
 			"title": null
 		},
 		{
-			"site": "google",
+			"icon": "google",
 			"title": "get rich fast"
 		},
 		{
-			"site": "google",
+			"icon": "google",
 			"title": "how to dispose a body"
 		},
 		{
-			"site": "google",
+			"icon": "google",
 			"title": "countries without an extradition agreement"
 		},
 		{
-			"site": "cheaptickets",
+			"icon": "cheaptickets",
 			"title": "CheapTickets.nl | Russia"
 		}
 	]

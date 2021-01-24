@@ -3,11 +3,11 @@
 	"hover_description": "Please visit to support us, we need milk, we need you.\nMaria probably comes with a text that contains a thousand lines instead of a single one,\nso let's check for multiple lines right now...",
 	"browser_tabs": [
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "copy"
 		},
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "paste"
 		}
 	]

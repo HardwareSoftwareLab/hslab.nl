@@ -3,11 +3,11 @@
 	"hover_description": "This site will be bananas!",
 	"browser_tabs": [
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "copy"
 		},
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "paste"
 		}
 	]

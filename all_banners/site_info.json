@@ -3,11 +3,11 @@
 	"hover_description": "An overview of all the sites.",
 	"browser_tabs": [
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "copy"
 		},
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "paste"
 		}
 	]

@@ -3,11 +3,11 @@
 	"hover_description": "Hackaton!",
 	"browser_tabs": [
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "copy"
 		},
 		{
-			"site": "stackoverflow",
+			"icon": "stackoverflow",
 			"title": "paste"
 		}
 	]
