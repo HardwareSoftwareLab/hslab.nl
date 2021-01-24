@@ -1,4 +1,14 @@
 {
 	"title": "mp4 banner test",
-	"hover_description": "mp4 > gif"
+	"hover_description": "mp4 > gif",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }

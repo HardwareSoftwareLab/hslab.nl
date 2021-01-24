@@ -15,6 +15,16 @@
                     "banner_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "all_banners",
             "hover_description": "An overview of all the sites.",
             "title": "sitemap"
@@ -31,6 +41,16 @@
                     "banner_bno_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "banner_network_association",
             "hover_description": "Information about those banner related websites.",
             "title": "Banner Network Association"
@@ -47,6 +67,16 @@
                     "banner_braitenberg_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "braitenberg",
             "hover_description": "Hackaton!",
             "title": "Braitenberg Hackaton"
@@ -63,6 +93,16 @@
                     "banner_byos_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "byos",
             "hover_description": "About evenings where we drink milk and show each other the websites we are making!",
             "title": "Bring Your Own Site"
@@ -79,9 +119,83 @@
                     "banner_eggbot_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "eggbot",
             "hover_description": "A drawing machine to draw on eggs and other round objects, available in the lab.",
             "title": "Eggbot"
+        },
+        "favicontrol": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_512x128.png"
+                ]
+            },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
+            "folder": "favicontrol",
+            "hover_description": "Customize the favicon!",
+            "title": "favicontrol"
+        },
+        "fullscreen_test": {
+            "banner_sources": {
+                "_128x512": [
+                    "banner_128x512.png"
+                ],
+                "_128x64": [
+                    "banner_128x64.png"
+                ],
+                "_512x128": [
+                    "banner_512x128.png"
+                ]
+            },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "div floating left"
+                },
+                {
+                    "site": "google",
+                    "title": "why does css suck so hard"
+                },
+                {
+                    "site": "youtube",
+                    "title": "Relaxing Music for Stress Relief"
+                },
+                {
+                    "site": null,
+                    "title": null
+                },
+                {
+                    "site": "cheaptickets",
+                    "title": "CheapTickets.nl | Buitenland"
+                }
+            ],
+            "folder": "fullscreen_test",
+            "hover_description": "going full! fullscreen!",
+            "title": "fullscreen test"
         },
         "hslab": {
             "banner_sources": {
@@ -95,6 +209,48 @@
                     "banner_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "div floating left"
+                },
+                {
+                    "site": "google",
+                    "title": "why does css suck so hard"
+                },
+                {
+                    "site": "youtube",
+                    "title": "Relaxing Music for Stress Relief"
+                },
+                {
+                    "site": "google",
+                    "title": "why does javascript suck so hard"
+                },
+                {
+                    "site": "youtube",
+                    "title": "WHEN LIFE BREAKS YOU - Powerful Motivational Speech"
+                },
+                {
+                    "site": null,
+                    "title": null
+                },
+                {
+                    "site": "google",
+                    "title": "get rich fast"
+                },
+                {
+                    "site": "google",
+                    "title": "how to dispose a body"
+                },
+                {
+                    "site": "google",
+                    "title": "countries without an extradition agreement"
+                },
+                {
+                    "site": "cheaptickets",
+                    "title": "CheapTickets.nl | Russia"
+                }
+            ],
             "folder": "hslab",
             "hover_description": "HSLab",
             "title": "HSLab"
@@ -105,6 +261,16 @@
                     "banner_512x128.mp4"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "mp4_banner_test",
             "hover_description": "mp4 > gif",
             "title": "mp4 banner test"
@@ -115,12 +281,23 @@
                     "banner_prolactin_128x512.jpeg"
                 ],
                 "_128x64": [
-                    "banner_128x64.png"
+                    "banner_128x64.png",
+                    "banner_inv_128x64.png"
                 ],
                 "_512x128": [
                     "banner_prolactin_512x128.jpeg"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "prolactin",
             "hover_description": "Please visit to support us, we need milk, we need you.\nMaria probably comes with a text that contains a thousand lines instead of a single one,\nso let's check for multiple lines right now...",
             "title": "Prolactin"
@@ -137,6 +314,16 @@
                     "banner_512x128.png"
                 ]
             },
+            "browser_tabs": [
+                {
+                    "site": "stackoverflow",
+                    "title": "copy"
+                },
+                {
+                    "site": "stackoverflow",
+                    "title": "paste"
+                }
+            ],
             "folder": "workshop_camera_shutter",
             "hover_description": "A workshop to make a camera shutter based on a sensor.",
             "title": "Sensor Shutter"

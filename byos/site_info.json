@@ -1,4 +1,14 @@
 {
 	"title": "Bring Your Own Site",
-	"hover_description": "About evenings where we drink milk and show each other the websites we are making!"
+	"hover_description": "About evenings where we drink milk and show each other the websites we are making!",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }

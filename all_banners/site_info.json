@@ -1,4 +1,14 @@
 {
 	"title": "sitemap",
-	"hover_description": "An overview of all the sites."
+	"hover_description": "An overview of all the sites.",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }

@@ -1,4 +1,14 @@
 {
 	"title": "Banner Network Association",
-	"hover_description": "Information about those banner related websites."
+	"hover_description": "Information about those banner related websites.",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }

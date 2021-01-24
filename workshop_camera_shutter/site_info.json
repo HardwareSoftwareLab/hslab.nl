@@ -1,4 +1,14 @@
 {
 	"title": "Sensor Shutter",
-	"hover_description": "A workshop to make a camera shutter based on a sensor."
+	"hover_description": "A workshop to make a camera shutter based on a sensor.",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }

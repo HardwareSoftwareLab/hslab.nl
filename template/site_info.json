@@ -1,4 +1,14 @@
 {
 	"title": "template",
-	"hover_description": "This site will be bananas!"
+	"hover_description": "This site will be bananas!",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }

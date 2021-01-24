@@ -1,4 +1,14 @@
 {
 	"title": "Braitenberg Hackaton",
-	"hover_description": "Hackaton!"
+	"hover_description": "Hackaton!",
+	"browser_tabs": [
+		{
+			"site": "stackoverflow",
+			"title": "copy"
+		},
+		{
+			"site": "stackoverflow",
+			"title": "paste"
+		}
+	]
 }
