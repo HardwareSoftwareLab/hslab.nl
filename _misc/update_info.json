@@ -6,8 +6,6 @@
 	],
 	"one_banner_of_each_size_required": false,
 	"ignore_folders": [
-		".git",
 		"template",
-		"_misc"
 	]
 }
