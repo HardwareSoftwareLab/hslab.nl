@@ -68,7 +68,7 @@ const p_bna = (async function() {
 			`.banner {
 				border: 1px solid black;
 			}`;
-		document.body.appendChild(sheet);
+		document.head.insertBefore(sheet, document.head.firstChild);
 	}
 
 
