@@ -87,7 +87,7 @@ const p_bna = (async function() {
 			const height = data.width_height_lookup[size][1];
 
 			css += '\n'+
-			`.banners_${width}x${height} {
+			`.banner_${width}x${height} {
 				width: ${width};
 				height: ${height};
 			}`
@@ -137,7 +137,7 @@ const p_bna = (async function() {
 			const width  = data.width_height_lookup[size][0];
 			const height = data.width_height_lookup[size][1];
 
-			const banner_containers = document.getElementsByClassName("banners"+size);
+			const banner_containers = document.getElementsByClassName("banner"+size);
 
 			for (let i = 0; i < banner_containers.length; i++) {
 				let container = banner_containers[i];
@@ -145,7 +145,7 @@ const p_bna = (async function() {
 				let site;
 
 				// it is possible to create a banner for a specific site
-				// e.g. <div class="banners_128x64" data-site="prolactin"></div>
+				// e.g. <div class="banner_128x64" data-site="prolactin"></div>
 				if (container.dataset.site != undefined) {
 
 					const _site = container.dataset.site;
