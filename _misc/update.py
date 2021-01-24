@@ -60,6 +60,10 @@ def main():
 			if not os.path.exists(f"../{folder}/site_info.json"):
 				continue
 
+			if folder.startswith('_'):
+				errors.append(f"[ERROR] {folder} is not a valid folder name for a site, folder names with a starting underscore are reserved.")
+				continue
+
 			#
 			# banner sources
 			#
@@ -69,7 +73,7 @@ def main():
 
 			if len(unfound_sizes):
 				error_prefix = "[ERROR]" if update_info["one_banner_of_each_size_required"] else "[WARNING]"
-				errors.append(f"{error_prefix} '{folder}' has no banners in the following sizes {unfound_sizes}")
+				errors.append(f"{error_prefix} '{folder}' has no banners in the following sizes {unfound_sizes}.")
 				if update_info["one_banner_of_each_size_required"]:
 					ok = False
 
